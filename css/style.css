@@ -1,0 +1,320 @@
+body{
+	font-family: arial;
+	font-size: 12px;
+	color: white;
+	background: cornflowerblue;
+	margin: 0px;
+	margin-top: 102px;
+}
+
+#container {
+	width: 100%;
+	height: auto;
+	margin: 0px auto;
+	padding: 10px auto;
+}
+
+/* header website */
+#container #header {
+	color: white;
+	background: rgba(250,250,250,0.5);
+	padding: 0px 0px;
+	overflow: hidden;
+	font-size: 14px;
+	position: fixed;
+	z-index: 100;
+	top: 0px;
+	width: 100%;
+}
+
+#container #header a{
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+
+/* logo */
+#container #header a h1 {
+    color: white;
+    font-family: Agency FB;
+    font-size: 48px;
+    margin: 0px auto;
+    margin-left: 20px;
+    margin-top: 20px;
+    /*border: 3px white solid;
+		border-radius: 5px;*/
+}
+
+
+/* tombol cari */
+#tombol-cari img {
+    background: orange;
+    border: 2px white solid;
+    padding: 3px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+}
+
+/* kolom input pencarian */
+#container #header input[name="cari"] {
+	width: 500px;
+    height: 28px;
+    border: none;
+    margin-bottom: 5px;
+    font-size: 14px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
+/* tombol keranjang */
+#tombol-keranjang img {
+    background: orange;
+    padding: 3px 6px;
+    border-radius: 5px;
+    border: 2px orange solid;
+
+}
+
+#tombol-keranjang img:hover{
+    border: 2px white solid;
+}
+
+/* tombol login */
+#container #header #login{
+	color: white;
+}
+
+#container #header #login:hover{
+	color: orange;
+}
+
+/* tombol daftar */
+#container #header #daftar {
+    background: white;
+    color: #000066;
+    padding: 3px 8px;
+    font-size: 14px;
+    border: 2px white solid;
+    border-radius: 5px
+}
+
+#container #header #daftar:hover {
+    color: white;
+    background: orange;
+}
+
+/*content website*/
+#container #content {
+    padding: 10px 0px;
+    overflow: hidden;
+}
+
+/*footer website*/
+#container #footer {
+		background: rgba(250,250,250,0.5);
+    padding: 10px;
+}
+
+#container #footer p {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    margin: 0px;
+}
+
+/*form daftar & login*/
+
+#container-user-akses {
+  width: 350px;
+  height: auto;
+  margin: 50px auto;
+  border-radius: 5px;
+  padding: 50px;
+  background: #F7F7F7;
+	color: cornflowerblue;
+}
+
+.element-form {
+  margin-bottom: 15px;
+}
+
+.element-form label {
+  display: block;
+  font-weight: bold;
+
+}
+.element-form span {
+  display: block;
+}
+
+.element-form h1{
+	font-family: Agency FB;
+	text-align: center;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+.element-form span input[type="text"],
+.element-form span input[type="password"],
+.element-form span textarea,
+.element-form span select{
+  border:none;
+  border-bottom: 2px cornflowerblue solid;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  background: #F7F7F7;
+}
+
+/*tombol daftar form daftar & login*/
+.element-form span input[type="submit"] {
+	background: orange;
+	color: white;
+	padding: 6px 15px;
+	font-size: 14px;
+	font-weight: bold;
+	border: 2px orange solid;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 350px;
+}
+/*tombol add*/
+.element-form span input[value="Add"],
+.element-form span input[value="Update"] {
+	background: orange;
+	color: white;
+	padding: 6px 15px;
+	font-size: 14px;
+	font-weight: bold;
+	border: 2px orange solid;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100px;
+}
+
+.element-form span input[type="submit"]:hover {
+background: white;
+border: 2px orange solid;
+color: orange;
+
+}
+
+/*notifikasi form daftar & login*/
+.notif {
+  background: red;
+  color: white;
+  padding: 10px;
+  font-size: 11px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#bg-page-profile {
+  overflow: hidden;
+}
+
+/* menu profile*/
+#menu-profile {
+  float: left;
+  width: 15%;
+	background: rgba(255, 250, 250, 0.5);
+}
+
+#menu-profile ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#menu-profile ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+#menu-profile ul li a:hover,
+#menu-profile ul li a.active {
+  background: #F7F7F7;
+  color: #000066;
+}
+
+/* content profile*/
+#profile-content {
+  float: left;
+  width: 82%;
+  padding: 10px;
+  background: #F7F7F7;
+  margin-left: 10px;
+	color: cornflowerblue;
+}
+
+.table-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-list tr.baris-title {
+  background: #E6E6E6;
+}
+
+.table-list tr th,
+.table-list tr td {
+  padding: 10px 7px;
+}
+
+.kolom-nomor {
+  width: 20px;
+  text-align: center;
+}
+
+.kiri {
+  text-align: left;
+}
+
+.tengah {
+  text-align: center;
+}
+
+.kanan {
+  text-align: right;
+}
+
+#frame-tambah {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.tombol-action {
+  border: 2px orange solid;
+  background: orange;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 3px;
+  font-size: 9px;
+}
+
+.tombol-action:hover {
+  border: 2px orange solid;
+  background: white;
+  color: orange;
+}
+
+.element-form span input[name="nama_kategori"],
+.element-form span select[name="id_kategori"],
+.element-form span input[name="nama_barang"],
+.element-form span textarea[name="spesifikasi"],
+.element-form span input[name="stok"],
+.element-form span input[name="harga"]{
+  border: 2px cornflowerblue solid;
+  margin: 10px auto;
+  border-radius: 5px;
+}

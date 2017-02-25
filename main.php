@@ -30,7 +30,7 @@
 				$query = mysqli_query($koneksi, "SELECT * FROM tb_barang WHERE status='on' ORDER BY rand() DESC LIMIT 9");
 
 			}
-			
+
 			$no=1;
 			while($row=mysqli_fetch_assoc($query)){
 

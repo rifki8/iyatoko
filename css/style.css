@@ -41,8 +41,6 @@ body{
     margin: 0px auto;
     margin-left: 20px;
     margin-top: 20px;
-    /*border: 3px white solid;
-		border-radius: 5px;*/
 }
 
 
@@ -96,7 +94,7 @@ body{
 /* tombol daftar */
 #container #header #daftar {
     background: white;
-    color: #000066;
+    color: cornflowerblue;
     padding: 3px 8px;
     font-size: 14px;
     border: 2px white solid;
@@ -116,6 +114,8 @@ body{
 
 /*footer website*/
 #container #footer {
+		float:right;
+		width: 100%;
 		background: rgba(250,250,250,0.5);
     padding: 10px;
 }
@@ -222,7 +222,6 @@ color: orange;
 #menu-profile {
   float: left;
   width: 15%;
-	background: rgba(255, 250, 250, 0.5);
 }
 
 #menu-profile ul {
@@ -230,6 +229,11 @@ color: orange;
   padding: 0px;
   list-style: none;
 }
+
+#menu-profile ul li {
+	margin-bottom: 5px;
+	background: rgba(255, 250, 250, 0.5);
+	}
 
 #menu-profile ul li a {
   display: block;
@@ -241,7 +245,7 @@ color: orange;
 #menu-profile ul li a:hover,
 #menu-profile ul li a.active {
   background: #F7F7F7;
-  color: #000066;
+  color: cornflowerblue;
 }
 
 /* content profile*/
@@ -320,7 +324,7 @@ color: orange;
 }
 
 #kiri {
-  width: 245px;
+  width: 15%;
   height: auto;
   float: left;
 }
@@ -335,20 +339,23 @@ color: orange;
 #menu-kategori ul li a {
   display: block;
   padding: 10px;
-  background: white;
-  color: blue;
+  background:rgba(255, 250, 250, 0.5);
+  color: white;
   text-decoration: none;
 }
 #menu-kategori ul li a:hover {
-  background: #e8e8e8;
+  background: white;
+	color: cornflowerblue;
 }
 
 #kanan {
-  width: 840px;
+  width: 82%;
   margin-left: 15px;
   height: auto;
   float: left;
+	color: cornflowerblue;
 }
+
 #kanan #frame-barang ul {
   list-style: none;
   margin: 0px;
@@ -357,7 +364,7 @@ color: orange;
 }
 #kanan #frame-barang ul li {
   width: 240px;
-  background: white;
+  background: #F7F7F7;
   padding: 10px 15px;
   margin-bottom: 15px;
   margin-right: 15px;
@@ -366,17 +373,19 @@ color: orange;
 #kanan #frame-barang ul li .price {
   font-size: 15px;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   margin-bottom: 10px;
+	color: orange;
 }
+
 
 #kanan #frame-barang ul li a img {
   display: block;
   width: 240px;
 }
 #kanan #frame-barang ul li .keterangan-gambar {
-  border-top: 1px solid #E6E6E6;
-  border-bottom: 1px solid #E6E6E6;
+  border-top: 3px solid #E6E6E6;
+  border-bottom: 3px solid #E6E6E6;
   padding: 10px 0px;
   height: 50px;
 }
@@ -387,6 +396,7 @@ color: orange;
 #kanan #frame-barang ul li .keterangan-gambar p a {
   font-weight: bold;
   text-decoration: none;
+	color: cornflowerblue;
 }
 #kanan #frame-barang ul li .keterangan-gambar span {
   display: block;
@@ -396,14 +406,16 @@ color: orange;
   text-align: center;
 }
 #kanan #frame-barang ul li .button-add-cart a {
-  background: #1e5474;
+  background: orange;
   color: white;
   text-decoration: none;
   padding: 5px 10px;
   display: inline-block;
   margin-top: 10px;
+	border: 2px orange solid;
   border-radius: 3px;
 }
 #kanan #frame-barang ul li .button-add-cart a:hover {
-  background: orange;
+  background: white;
+	color: orange;
 }

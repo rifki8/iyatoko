@@ -7,6 +7,7 @@
 
 	//content dinamis
 	$page = isset($_GET['page']) ? $_GET['page'] : false;
+	$id_kategori = isset($_GET['id_kategori']) ? $_GET['id_kategori'] : false;
 
 	$id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : false;
 	$nama_user = isset($_SESSION['nama_user']) ? $_SESSION['nama_user'] : false;
@@ -97,9 +98,8 @@
 			if (file_exists($namafile)){
 				include_once($namafile);
 			}
-
 			else{
-				echo "Maaf, file tersebut tidak  ada dalam sistem";
+				include_once("main.php");
 			}
 
 			?>

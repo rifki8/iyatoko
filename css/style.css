@@ -378,7 +378,6 @@ color: orange;
 	color: orange;
 }
 
-
 #kanan #frame-barang ul li a img {
   display: block;
   width: 240px;
@@ -412,7 +411,7 @@ color: orange;
   padding: 5px 10px;
   display: inline-block;
   margin-top: 10px;
-	border: 2px orange solid;
+  border: 2px orange solid;
   border-radius: 3px;
 }
 #kanan #frame-barang ul li .button-add-cart a:hover {

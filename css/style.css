@@ -418,3 +418,60 @@ color: orange;
   background: white;
 	color: orange;
 }
+
+#detail-bar
+{
+  background: white;
+  padding: 15px;
+}
+
+#detail-barang
+h2{
+  margin-top: 0px;
+}
+
+#detail-barang #frame-gambar
+{
+  background: #FBFBFB;
+  padding: 20px;
+}
+
+#detail-barang #frame-gambar img
+{
+  display: block;
+  margin:0px auto;
+}
+
+#detail-barang #frame-harga
+{
+  margin: 15px 0px;
+}
+
+#detail-barang #frame-harga span
+{
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
+
+#detail-barang #frame-harga a
+{
+  background: #1e5474;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: inline-block;
+  float: right;
+  border-radius: 3px;
+}
+
+#detail-barang #frame-harga a:hover
+{
+  background: orange;
+}
+
+#detail-barang #keterangan
+{
+  margin:20px 0px;
+}
+

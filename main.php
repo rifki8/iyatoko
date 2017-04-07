@@ -1,21 +1,9 @@
 <div id="kiri">
-
-	<div id="menu-kategori">
-		<ul>
-
-			<?php
-				$query = mysqli_query($koneksi, "SELECT * FROM tb_kategori WHERE status='on'");
-
-				while($row=mysqli_fetch_assoc($query)){
-					if($id_kategori == $row['id_kategori']){
-						echo "<li><a href='".BASE_URL."index.php?id_kategori=$row[id_kategori]' class='active'>$row[nama_kategori]</a></li>";
-					}else{
-						echo "<li><a href='".BASE_URL."index.php?id_kategori=$row[id_kategori]'>$row[nama_kategori]</a></li>";
-					}
-				}
-			?>
-		</ul>
-	</div>
+	<?php
+	
+		echo kategori($id_kategori);
+		
+	?>
 </div>
 
 <div id="kanan">

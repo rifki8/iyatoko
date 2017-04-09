@@ -1,7 +1,7 @@
 body{
 	font-family: arial;
 	font-size: 12px;
-	color: white;
+	color: rgba(29, 91, 219, 0.8);
 	background: white;
 	margin: 0px;
 	margin-top: 102px;
@@ -34,13 +34,11 @@ body{
 
 
 /* logo */
-#container #header a h1 {
-    color: white;
-    font-family: Agency FB;
-    font-size: 48px;
-    margin: 0px auto;
+#container #header #logo {
+    width: 200px;
+		height: 75px;
+    margin: 10px auto;
     margin-left: 20px;
-    margin-top: 20px;
 }
 
 
@@ -60,7 +58,7 @@ body{
 	width: 500px;
     height: 28px;
     border: none;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-size: 14px;
     padding-left: 5px;
     border-radius: 5px;
@@ -70,16 +68,29 @@ body{
 }
 
 /* tombol keranjang */
-#tombol-keranjang img {
+#tombol-keranjang img{
+	vertical-align: bottom;
+	position: relative;
+}
+#tombol-keranjang {
     background: orange;
-    padding: 3px 6px;
+    padding: 3px 10px;
     border-radius: 5px;
     border: 2px orange solid;
 
 }
 
-#tombol-keranjang img:hover{
+#tombol-keranjang:hover{
     border: 2px white solid;
+}
+
+.total-barang{
+	text-decoration: none;
+	font-size: 10px;
+	color: white;
+	font-weight: bold;
+	vertical-align: top;
+	position: absolute;
 }
 
 /* tombol login */
@@ -94,7 +105,7 @@ body{
 /* tombol daftar */
 #container #header #daftar {
     background: white;
-    color: cornflowerblue;
+    color: rgba(29, 91, 219, 0.8);
     padding: 3px 8px;
     font-size: 14px;
     border: 2px white solid;
@@ -136,7 +147,8 @@ body{
   border-radius: 5px;
   padding: 50px;
   background: #F7F7F7;
-	color: cornflowerblue;
+	color: rgba(29, 91, 219, 0.8);
+	border: 5px rgba(29, 91, 219, 0.8) solid;
 }
 
 .element-form {
@@ -164,7 +176,7 @@ body{
 .element-form span textarea,
 .element-form span select{
   border:none;
-  border-bottom: 2px cornflowerblue solid;
+  border-bottom: 2px rgba(29, 91, 219, 0.8) solid;
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
@@ -232,7 +244,9 @@ color: orange;
 
 #menu-profile ul li {
 	margin-bottom: 5px;
-	background: rgba(250, 250, 250, 0.5);
+	background: rgba(29, 91, 219, 0.8);
+	border: 2px rgba(29, 91, 219, 0.8) solid;
+	border-radius: 5px;
 	}
 
 #menu-profile ul li a {
@@ -245,7 +259,7 @@ color: orange;
 #menu-profile ul li a:hover,
 #menu-profile ul li a.active {
   background: #F7F7F7;
-  color: cornflowerblue;
+  color: rgba(29, 91, 219, 0.8);
 }
 
 /* content profile*/
@@ -255,7 +269,7 @@ color: orange;
   padding: 10px;
   background: #F7F7F7;
   margin-left: 10px;
-	color: cornflowerblue;
+	color: rgba(29, 91, 219, 0.8);
 }
 
 .table-list {
@@ -263,8 +277,13 @@ color: orange;
   border-collapse: collapse;
 }
 
+.table-list tr{
+	border-bottom: 1px rgba(29, 91, 219, 0.8) solid;
+}
+
 .table-list tr.baris-title {
-  background: #E6E6E6;
+  background: rgba(29, 91, 219, 0.8);
+	color: white;
 }
 
 .table-list tr th,
@@ -318,7 +337,7 @@ color: orange;
 .element-form span textarea[name="spesifikasi"],
 .element-form span input[name="stok"],
 .element-form span input[name="harga"]{
-  border: 2px cornflowerblue solid;
+  border: 2px rgba(29, 91, 219, 0.8) solid;
   margin: 10px auto;
   border-radius: 5px;
 }
@@ -339,15 +358,15 @@ color: orange;
 #menu-kategori ul li a {
   display: block;
   padding: 10px;
-  background:cornflowerblue;
+  background:rgba(29, 91, 219, 0.8);
   color: white;
   text-decoration: none;
-  border: 2px cornflowerblue solid;
+  border: 2px rgba(29, 91, 219, 0.8) solid;
   border-radius: 5px;
 }
 #menu-kategori ul li a:hover {
   background: white;
-	color: cornflowerblue;
+	color: rgba(29, 91, 219, 0.8);
 }
 
 #kanan {
@@ -355,7 +374,7 @@ color: orange;
   margin-left: 15px;
   height: auto;
   float: left;
-	color: cornflowerblue;
+	color: rgba(29, 91, 219, 0.8);
 }
 
 #kanan #frame-barang ul {
@@ -366,7 +385,7 @@ color: orange;
 }
 #kanan #frame-barang ul li {
   width: 240px;
-  background: #F7F7F7;
+  background: rgba(29, 91, 219, 0.8);
   padding: 10px 15px;
   margin-bottom: 15px;
   margin-right: 15px;
@@ -383,21 +402,24 @@ color: orange;
 #kanan #frame-barang ul li a img {
   display: block;
   width: 240px;
+	height: 240px;
+	margin-bottom: 10px;
 }
 #kanan #frame-barang ul li .keterangan-gambar {
-  border-top: 3px solid #E6E6E6;
-  border-bottom: 3px solid #E6E6E6;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
   padding: 10px 0px;
   height: 50px;
 }
 #kanan #frame-barang ul li .keterangan-gambar p {
   text-align: center;
   margin: 5px 0px;
+	color: white;
 }
 #kanan #frame-barang ul li .keterangan-gambar p a {
   font-weight: bold;
   text-decoration: none;
-	color: cornflowerblue;
+	color: white;
 }
 #kanan #frame-barang ul li .keterangan-gambar span {
   display: block;
@@ -458,18 +480,21 @@ h2{
 
 #detail-barang #frame-harga a
 {
-  background: #1e5474;
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  display: inline-block;
-  float: right;
-  border-radius: 3px;
+	background: orange;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: inline-block;
+	margin-top: 10px;
+	border: 2px orange solid;
+	border-radius: 3px;
+	float: right;
 }
 
 #detail-barang #frame-harga a:hover
 {
-  background: orange;
+  background: white;
+	color: orange;
 }
 
 #detail-barang #keterangan
@@ -477,3 +502,50 @@ h2{
   margin:20px 0px;
 }
 
+.update-quantity{
+	width: 30px;
+	text-align: center;
+}
+
+.kanan.hapus_item {
+	position: relative;
+}
+
+.kanan.hapus_item a{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 5px;
+	text-decoration: none;
+	color: white;
+	background: red;
+
+
+}
+
+#frame-button-keranjang a{
+	text-align: center;
+	width: 150px;
+	border : 2px rgba(29, 91, 219, 0.8) solid;
+	border-radius: 5px;
+	background: rgba(29, 91, 219, 0.8);
+	color: white;
+	text-decoration: none;
+	padding: 7px 20px;
+	display: inline-block;
+	margin: 15px 5px;
+	margin-bottom: 0px;
+}
+
+#frame-button-keranjang a:hover{
+	background: white;
+	color: rgba(29, 91, 219, 0.8);
+}
+
+#lanjut-belanja{
+	float: left;
+}
+
+#lanjut-pemesanan{
+	float: right;
+}

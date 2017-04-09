@@ -12,6 +12,7 @@
 	$id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : false;
 	$nama_user = isset($_SESSION['nama_user']) ? $_SESSION['nama_user'] : false;
 	$level_user = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
+	$keranjang = isset($_SESSION['keranjang']) ? $_SESSION['keranjang'] : false;
 
   ?>
 
@@ -23,10 +24,10 @@
 	</head>
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL."css/style.css"; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL."css/slider.css"; ?>">
-	
+
 	<script src="<?php echo BASE_URL."js/jquery-3.1.1.min.js"; ?>"></script>
 	<script src="<?php echo BASE_URL."js/Slides-SlidesJS-3/source/jquery.slides.min.js"; ?>"></script>
-	
+
 		<script>
 		$(function() {
 			$('#slides').slidesjs({
@@ -42,7 +43,6 @@
 	<body>
 
 		<div  id="container">
-
 			<!--header website-->
 			<div id="header">
 
@@ -52,23 +52,32 @@
 						<tr>
 							<!--logo-->
 							<td width="250" align="center">
-							<a href="index.php"><h1>IYA toko</h1</a>
+								<a href="index.php">
+									<img src="<?php echo BASE_URL."images/iyatoko.png"; ?>" id="logo" >
+								</a>
 							</td>
 
 							<!--kolom input pencarian-->
 							<td width="600" align="right">
-							<input type="text" name="cari" size="75" placeholder="Cari apa ya ... ?" />
+								<input type="text" name="cari" size="75" placeholder="Cari apa ya ... ?" />
 							</td>
 
 							<!--tombol cari-->
 							<td>
-							<a href="#" id="tombol-cari">
-								<img src="<?php echo BASE_URL."images/search.png"; ?>">
-							</a>
+								<a href="#" id="tombol-cari">
+									<img src="<?php echo BASE_URL."images/search.png"; ?>">
+								</a>
 							</td>
 
 							<td width="100" align="right">
-								<a href="<?php echo BASE_URL."index.php?page=keranjang"; ?>" id="tombol-keranjang"><img src="<?php echo BASE_URL."images/cart.png"; ?>" ></a>
+								<a href="<?php echo BASE_URL."index.php?page=keranjang"; ?>" id="tombol-keranjang">
+									<img src="<?php echo BASE_URL."images/cart.png"; ?>" >
+									<?php
+									if (!empty($keranjang)) {
+										echo "<span class=total-barang>".count($keranjang)."</span>";
+									}
+									 ?>
+								</a>
 							</td>
 
 							<td width='300' align='right'>

@@ -180,7 +180,7 @@ body{
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
-  background: #F7F7F7;
+  background: #FFF;
 }
 
 /*tombol daftar form daftar & login*/
@@ -548,4 +548,31 @@ h2{
 
 #lanjut-pemesanan{
 	float: right;
+}
+
+#frame-data-pengiriman {
+	float: left;
+	width: 500px;
+	margin-right: 20px;
+	margin-left: 10px;
+}
+
+#frame-data-detail {
+	float: left;
+	width: 560px;
+}
+
+#frame-detail-order {
+	border: 1px solid grey;
+}
+
+#frame-form-pengiriman {
+	border: 1px solid grey;
+	padding: 25px;
+}
+
+h3.label-data-pengiriman {
+	border: 1px solid grey;
+	padding: 10px 7px;
+	margin: 0px;
 }

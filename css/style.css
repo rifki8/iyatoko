@@ -4,7 +4,7 @@ body{
 	color: rgba(29, 91, 219, 0.8);
 	background: white;
 	margin: 0px;
-	margin-top: 102px;
+	margin-top: 64px;
 }
 
 #container {
@@ -35,10 +35,9 @@ body{
 
 /* logo */
 #container #header #logo {
-    width: 200px;
-		height: 75px;
-    margin: 10px auto;
-    margin-left: 20px;
+    width: 140px;
+		height: 40px;
+    margin: 10px 5px;
 }
 
 

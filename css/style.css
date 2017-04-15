@@ -1,8 +1,8 @@
 body{
 	font-family: arial;
 	font-size: 12px;
-	color: rgba(29, 91, 219, 0.8);
-	background: white;
+	color: #4A7CE2;
+	background: #F8F8F8;
 	margin: 0px;
 	margin-top: 64px;
 }
@@ -17,7 +17,8 @@ body{
 /* header website */
 #container #header {
 	color: white;
-	background: rgba(29, 91, 219, 0.8);
+	background: #4A7CE2;
+	opacity: 0.9;
 	padding: 0px 0px;
 	overflow: hidden;
 	font-size: 14px;
@@ -37,7 +38,7 @@ body{
 #container #header #logo {
     width: 140px;
 		height: 40px;
-    margin: 10px 5px;
+    margin: 10px 5px
 }
 
 
@@ -49,21 +50,19 @@ body{
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-
 }
 
 /* kolom input pencarian */
 #container #header input[name="cari"] {
 	width: 500px;
-    height: 28px;
-    border: none;
-    margin-bottom: 3px;
-    font-size: 14px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-
+  height: 28px;
+  border: none;
+  margin-bottom: 3px;
+  font-size: 14px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 /* tombol keranjang */
@@ -76,7 +75,7 @@ body{
     padding: 3px 10px;
     border-radius: 5px;
     border: 2px orange solid;
-
+		box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
 #tombol-keranjang:hover{
@@ -104,11 +103,12 @@ body{
 /* tombol daftar */
 #container #header #daftar {
     background: white;
-    color: rgba(29, 91, 219, 0.8);
+    color: #4A7CE2;
     padding: 3px 8px;
     font-size: 14px;
     border: 2px white solid;
-    border-radius: 5px
+    border-radius: 5px;
+		box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
 #container #header #daftar:hover {
@@ -126,8 +126,9 @@ body{
 #container #footer {
 		float:right;
 		width: 100%;
-		background: rgba(29, 91, 219, 0.8);
+		background: #4A7CE2;
     padding: 10px;
+		box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
 #container #footer p {
@@ -145,9 +146,10 @@ body{
   margin: 50px auto;
   border-radius: 5px;
   padding: 50px;
-  background: #F7F7F7;
-	color: rgba(29, 91, 219, 0.8);
-	border: 5px rgba(29, 91, 219, 0.8) solid;
+  background: #F8F8F8;
+	color: #4A7CE2;
+	border: 5px #4A7CE2 solid;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
 .element-form {
@@ -157,8 +159,8 @@ body{
 .element-form label {
   display: block;
   font-weight: bold;
-
 }
+
 .element-form span {
   display: block;
 }
@@ -175,7 +177,7 @@ body{
 .element-form span textarea,
 .element-form span select{
   border:none;
-  border-bottom: 2px rgba(29, 91, 219, 0.8) solid;
+  border-bottom: 2px #4A7CE2 solid;
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
@@ -193,6 +195,7 @@ body{
 	border-radius: 5px;
 	cursor: pointer;
 	width: 350px;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 /*tombol add*/
 .element-form span input[value="Add"],
@@ -206,6 +209,7 @@ body{
 	border-radius: 5px;
 	cursor: pointer;
 	width: 100px;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
 .element-form span input[type="submit"]:hover {
@@ -224,6 +228,7 @@ color: orange;
   margin-bottom: 10px;
   border-radius: 5px;
 }
+box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 
 #bg-page-profile {
   overflow: hidden;
@@ -243,10 +248,10 @@ color: orange;
 
 #menu-profile ul li {
 	margin-bottom: 5px;
-	background: rgba(29, 91, 219, 0.8);
-	border: 2px rgba(29, 91, 219, 0.8) solid;
-	border-radius: 5px;
-	}
+	background: #4A7CE2;
+	border: 2px #4A7CE2 solid;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
+}
 
 #menu-profile ul li a {
   display: block;
@@ -257,8 +262,8 @@ color: orange;
 
 #menu-profile ul li a:hover,
 #menu-profile ul li a.active {
-  background: #F7F7F7;
-  color: rgba(29, 91, 219, 0.8);
+  background: #F8F8F8;
+  color: #4A7CE2;
 }
 
 /* content profile*/
@@ -266,9 +271,9 @@ color: orange;
   float: left;
   width: 82%;
   padding: 10px;
-  background: #F7F7F7;
+  background: #F8F8F8;
   margin-left: 10px;
-	color: rgba(29, 91, 219, 0.8);
+	color: #4A7CE2;
 }
 
 .table-list {
@@ -277,11 +282,11 @@ color: orange;
 }
 
 .table-list tr{
-	border-bottom: 1px rgba(29, 91, 219, 0.8) solid;
+	border-bottom: 1px #4A7CE2 solid;
 }
 
 .table-list tr.baris-title {
-  background: rgba(29, 91, 219, 0.8);
+  background: #4A7CE2;
 	color: white;
 }
 
@@ -336,7 +341,7 @@ color: orange;
 .element-form span textarea[name="spesifikasi"],
 .element-form span input[name="stok"],
 .element-form span input[name="harga"]{
-  border: 2px rgba(29, 91, 219, 0.8) solid;
+  border: 2px #4A7CE2 solid;
   margin: 10px auto;
   border-radius: 5px;
 }
@@ -357,15 +362,15 @@ color: orange;
 #menu-kategori ul li a {
   display: block;
   padding: 10px;
-  background:rgba(29, 91, 219, 0.8);
+  background:#4A7CE2;
   color: white;
   text-decoration: none;
-  border: 2px rgba(29, 91, 219, 0.8) solid;
-  border-radius: 5px;
+  border: 2px #4A7CE2 solid;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 #menu-kategori ul li a:hover {
   background: white;
-	color: rgba(29, 91, 219, 0.8);
+	color: #4A7CE2;
 }
 
 #kanan {
@@ -373,7 +378,7 @@ color: orange;
   margin-left: 15px;
   height: auto;
   float: left;
-	color: rgba(29, 91, 219, 0.8);
+	color: #4A7CE2;
 }
 
 #kanan #frame-barang ul {
@@ -384,11 +389,12 @@ color: orange;
 }
 #kanan #frame-barang ul li {
   width: 240px;
-  background: rgba(29, 91, 219, 0.8);
+  background: #4A7CE2;
   padding: 10px 15px;
   margin-bottom: 15px;
   margin-right: 15px;
   float: left;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 #kanan #frame-barang ul li .price {
   font-size: 15px;
@@ -436,6 +442,7 @@ color: orange;
   margin-top: 10px;
   border: 2px orange solid;
   border-radius: 3px;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 #kanan #frame-barang ul li .button-add-cart a:hover {
   background: white;
@@ -525,9 +532,9 @@ h2{
 #frame-button-keranjang a{
 	text-align: center;
 	width: 150px;
-	border : 2px rgba(29, 91, 219, 0.8) solid;
+	border : 2px #4A7CE2 solid;
 	border-radius: 5px;
-	background: rgba(29, 91, 219, 0.8);
+	background: #4A7CE2;
 	color: white;
 	text-decoration: none;
 	padding: 7px 20px;
@@ -538,7 +545,7 @@ h2{
 
 #frame-button-keranjang a:hover{
 	background: white;
-	color: rgba(29, 91, 219, 0.8);
+	color: #4A7CE2;
 }
 
 #lanjut-belanja{

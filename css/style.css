@@ -91,17 +91,17 @@ body{
 	position: absolute;
 }
 
-/* tombol login */
-#container #header #login{
+/* tombol daftar / my profile */
+#container #header #daftar{
 	color: white;
 }
 
-#container #header #login:hover{
+#container #header #daftar:hover{
 	color: orange;
 }
 
-/* tombol daftar */
-#container #header #daftar {
+/* tombol login / logout */
+#container #header #login {
     background: white;
     color: #4A7CE2;
     padding: 3px 8px;
@@ -111,7 +111,7 @@ body{
 		box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
-#container #header #daftar:hover {
+#container #header #login:hover {
     color: white;
     background: orange;
 }
@@ -192,7 +192,6 @@ body{
 	font-size: 14px;
 	font-weight: bold;
 	border: 2px orange solid;
-	border-radius: 5px;
 	cursor: pointer;
 	width: 350px;
 	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
@@ -343,7 +342,6 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 .element-form span input[name="harga"]{
   border: 2px #4A7CE2 solid;
   margin: 10px auto;
-  border-radius: 5px;
 }
 
 #kiri {

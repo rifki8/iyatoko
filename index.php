@@ -82,22 +82,22 @@
 
 							<td width='300' align='right'>
 
-							<!--tombol login, daftar, my profile-->
+							<!--tombol login, daftar, my profile, logout-->
 
 							<?php
 
 								if ($id_user) {
 									echo "Hi <b> $nama_user </b>,
-							<a href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=list' id='login'>My Profile</a>
+							<a href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=list' id='daftar'>My Profile</a>
 
-							<a href='".BASE_URL."logout.php' id='daftar'>Logout</a>";
+							<a href='".BASE_URL."logout.php' id='login'>Logout</a>";
 								}
 
 								else{
 									echo "
-							<a href='".BASE_URL."index.php?page=login' id='login'>Login</a>
+							<a href='".BASE_URL."index.php?page=daftar' id='daftar'>Daftar</a>
 
-							<a href='".BASE_URL."index.php?page=daftar' id='daftar'>Daftar</a>";
+							<a href='".BASE_URL."index.php?page=login' id='login'>Login</a>";
 								}
 
 							 ?>

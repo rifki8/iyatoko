@@ -25,8 +25,9 @@
 		$_SESSION['level_user'] = $row['level_user'];
 
 		if(isset($_SESSION["proses_pesanan"])){
+			unset($_SESSION["proses_pesanan"]);
 			header("location: ".BASE_URL."index.php?page=data_pemesan");
-		}else{		
+		}else{
 			header("location: ".BASE_URL."index.php?page=my_profile&module=pesanan&action=list");
 		}
 	}

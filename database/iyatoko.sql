@@ -92,9 +92,9 @@ CREATE TABLE `tb_pesanan` (
   `alamat` varchar(300) NOT NULL,
   `tanggal_pemesanan` datetime NOT NULL,
   `status` tinyint(4) NOT NULL,
-  `nomer_rekening` varchar(20) NOT NULL,
-  `nama_akun` varchar(150) NOT NULL,
-  `tanggal_tranfer` date NOT NULL,
+  `nomer_rekening` varchar(20) DEFAULT NULL,
+  `nama_akun` varchar(150) DEFAULT NULL,
+  `tanggal_tranfer` date DEFAULT NULL,
   PRIMARY KEY (`id_pesanan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

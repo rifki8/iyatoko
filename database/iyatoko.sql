@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `tb_barang`;
 
 CREATE TABLE `tb_barang` (
   `id_barang` int(10) NOT NULL AUTO_INCREMENT,
+  `id_supplier` int(10) NOT NULL,
   `id_kategori` int(10) NOT NULL,
   `nama_barang` varchar(250) NOT NULL,
   `spesifikasi` text NOT NULL,
@@ -34,7 +35,7 @@ CREATE TABLE `tb_barang` (
 
 /*Data for the table `tb_barang` */
 
-insert  into `tb_barang`(`id_barang`,`id_kategori`,`nama_barang`,`spesifikasi`,`gambar`,`harga`,`stok`,`status`) values (1,1,'Gitar','Waw','guitar-pics-22.jpg',1500000,12,'on'),(2,1,'Iphone 7','<p>Wow</p>','1053278sub-buzz-14973-1473277751-1780x390.jpg',13000000,10,'on');
+insert  into `tb_barang`(`id_barang`,`id_supplier`,`id_kategori`,`nama_barang`,`spesifikasi`,`gambar`,`harga`,`stok`,`status`) values (1,0,1,'Gitar','Waw','guitar-pics-22.jpg',1500000,12,'on'),(2,0,1,'Iphone 7','<p>Wow</p>','1053278sub-buzz-14973-1473277751-1780x390.jpg',13000000,10,'on');
 
 /*Table structure for table `tb_detail_pesanan` */
 
@@ -64,21 +65,6 @@ CREATE TABLE `tb_kategori` (
 
 insert  into `tb_kategori`(`id_kategori`,`nama_kategori`,`status`) values (1,'Alat Musik','on'),(2,'Smartphone','on');
 
-/*Table structure for table `tb_konfirmasi_pembayaran` */
-
-DROP TABLE IF EXISTS `tb_konfirmasi_pembayaran`;
-
-CREATE TABLE `tb_konfirmasi_pembayaran` (
-  `id_konfirmasi` int(10) NOT NULL AUTO_INCREMENT,
-  `id_pemesanan` int(10) NOT NULL,
-  `nomor_rekening` varchar(20) NOT NULL,
-  `nama_account` varchar(150) NOT NULL,
-  `tanggal_transfer` date NOT NULL,
-  PRIMARY KEY (`id_konfirmasi`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `tb_konfirmasi_pembayaran` */
-
 /*Table structure for table `tb_kota` */
 
 DROP TABLE IF EXISTS `tb_kota`;
@@ -106,6 +92,9 @@ CREATE TABLE `tb_pesanan` (
   `alamat` varchar(300) NOT NULL,
   `tanggal_pemesanan` datetime NOT NULL,
   `status` tinyint(4) NOT NULL,
+  `nomer_rekening` varchar(20) NOT NULL,
+  `nama_akun` varchar(150) NOT NULL,
+  `tanggal_tranfer` date NOT NULL,
   PRIMARY KEY (`id_pesanan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -127,6 +116,21 @@ CREATE TABLE `tb_slider` (
 /*Data for the table `tb_slider` */
 
 insert  into `tb_slider`(`id_slider`,`nama_slider`,`gambar`,`link`,`status`) values (1,'Gitar','guitar-pics-22.jpg','index.php?page=detail&id_barang=1','on'),(2,'Iphone 6','1053278sub-buzz-14973-1473277751-1780x390.jpg','index.php?page=detail&id_barang=2','on');
+
+/*Table structure for table `tb_supplier` */
+
+DROP TABLE IF EXISTS `tb_supplier`;
+
+CREATE TABLE `tb_supplier` (
+  `id_supplier` int(10) NOT NULL AUTO_INCREMENT,
+  `nama_supplier` varchar(150) NOT NULL,
+  `alamat` varchar(300) NOT NULL,
+  `nomor_telepon` varchar(15) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  PRIMARY KEY (`id_supplier`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_supplier` */
 
 /*Table structure for table `tb_user` */
 

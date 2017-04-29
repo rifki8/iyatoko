@@ -1,144 +1,119 @@
 <?php
+session_start(); //session start
 
-	session_start();
+require_once ('libraries/Google/autoload.php');
 
-	include_once("function/helper.php");
-	include_once("function/koneksi.php");
+//Insert your cient ID and secret 
+//You can get it from : https://console.developers.google.com/
+$client_id = '13727682380-1olhpdn3cur39oosnomiflhc8ieol8lh.apps.googleusercontent.com'; 
+$client_secret = 'orvF0MjcnLGTgTRQi38pM-LH';
+$redirect_uri = 'http://localhost/iyatoko';
 
-	//content dinamis
-	$page = isset($_GET['page']) ? $_GET['page'] : false;
-	$id_kategori = isset($_GET['id_kategori']) ? $_GET['id_kategori'] : false;
+//database
+$db_username = "root"; //Database Username
+$db_password = ""; //Database Password
+$host_name = "localhost"; //Mysql Hostname
+$db_name = 'glogin'; //Database Name
 
-	$id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : false;
-	$nama_user = isset($_SESSION['nama_user']) ? $_SESSION['nama_user'] : false;
-	$level_user = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
-	$keranjang = isset($_SESSION['keranjang']) ? $_SESSION['keranjang'] : array();
-	//$totalBarang = count($keranjang);
+//incase of logout request, just unset the session var
+if (isset($_GET['logout'])) {
+  unset($_SESSION['access_token']);
+}
 
-  ?>
+/************************************************
+  Make an API request on behalf of a user. In
+  this case we need to have a valid OAuth 2.0
+  token for the user, so we need to send them
+  through a login flow. To do this we need some
+  information from our API console project.
+ ************************************************/
+$client = new Google_Client();
+$client->setClientId($client_id);
+$client->setClientSecret($client_secret);
+$client->setRedirectUri($redirect_uri);
+$client->addScope("email");
+$client->addScope("profile");
 
-<!DOCTYPE html>
-<html>
+/************************************************
+  When we create the service here, we pass the
+  client to it. The client then queries the service
+  for the required scopes, and uses that when
+  generating the authentication URL later.
+ ************************************************/
+$service = new Google_Service_Oauth2($client);
 
-	<head>
-		<title>IYA toko | Cari semua kebutuhanmu</title>
-	</head>
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL."css/style.css"; ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL."css/slider.css"; ?>">
+/************************************************
+  If we have a code back from the OAuth 2.0 flow,
+  we need to exchange that with the authenticate()
+  function. We store the resultant access token
+  bundle in the session, and redirect to ourself.
+*/
+  
+if (isset($_GET['code'])) {
+  $client->authenticate($_GET['code']);
+  $_SESSION['access_token'] = $client->getAccessToken();
+  header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+  exit;
+}
 
-	<script src="<?php echo BASE_URL."js/jquery-3.1.1.min.js"; ?>"></script>
-	<script src="<?php echo BASE_URL."js/Slides-SlidesJS-3/source/jquery.slides.min.js"; ?>"></script>
-
-		<script>
-		$(function() {
-			$('#slides').slidesjs({
-				height: 350,
-				play: { auto :true,
-						interval : 3000
-						},
-				navigation : false
-			});
-		});
-		</script>
-
-	<body>
-
-		<div  id="container">
-			<!--header website-->
-			<div id="header">
-
-				<form>
-
-					<table cellspacing="0" cellpadding="0">
-						<tr>
-							<!--logo-->
-							<td width="250" align="center">
-								<a href="index.php">
-									<img src="<?php echo BASE_URL."images/iyatoko.png"; ?>" id="logo" >
-								</a>
-							</td>
-
-							<!--kolom input pencarian-->
-							<td width="600" align="right">
-								<input type="text" name="cari" size="75" placeholder="Cari apa ya ... ?" />
-							</td>
-
-							<!--tombol cari-->
-							<td>
-								<a href="#" id="tombol-cari">
-									<img src="<?php echo BASE_URL."images/search.png"; ?>">
-								</a>
-							</td>
-
-							<td width="100" align="right">
-								<a href="<?php echo BASE_URL."index.php?page=keranjang"; ?>" id="tombol-keranjang">
-									<img src="<?php echo BASE_URL."images/cart.png"; ?>" >
-									<?php
-									if (!empty($keranjang)) {
-										echo "<span class=total-barang>".count($keranjang)."</span>";
-									}
-									 ?>
-								</a>
-							</td>
-
-							<td width='300' align='right'>
-
-							<!--tombol login, daftar, my profile, logout-->
-
-							<?php
-
-								if ($id_user) {
-									echo "Hi <b> $nama_user </b>,
-							<a href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=list' id='daftar'>My Profile</a>
-
-							<a href='".BASE_URL."logout.php' id='login'>Logout</a>";
-								}
-
-								else{
-									echo "
-							<a href='".BASE_URL."index.php?page=daftar' id='daftar'>Daftar</a>
-
-							<a href='".BASE_URL."index.php?page=login' id='login'>Login</a>";
-								}
-
-							 ?>
+/************************************************
+  If we have an access token, we can make
+  requests, else we generate an authentication URL.
+ ************************************************/
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+  $client->setAccessToken($_SESSION['access_token']);
+} else {
+  $authUrl = $client->createAuthUrl();
+}
 
 
+//Display user info or display login url as per the info we have.
+echo '<div style="margin:20px">';
+if (isset($authUrl)){ 
+	//show login url
+	echo '<div align="center">';
+	echo '<h3>Login with Google</h3>';
+	echo '<div>Please click login button to connect to Google.</div>';
+	echo '<a class="login" href="' . $authUrl . '"><img src="images/1.png" /></a>';
+	echo '</div>';
+	
+} else {
+	
+	$user = $service->userinfo->get(); //get user info 
+	
+	// connect to database
+	$mysqli = new mysqli($host_name, $db_username, $db_password, $db_name);
+    if ($mysqli->connect_error) {
+        die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+    }
+	
+	//check if user exist in database using COUNT
+	$result = $mysqli->query("SELECT COUNT(google_id) as usercount FROM google_users WHERE google_id=$user->id");
+	$user_count = $result->fetch_object()->usercount; //will return 0 if user doesn't exist
+	
+	//show user picture
+	echo '<img src="'.$user->picture.'" style="float: right;margin-top: 33px;" />';
+	
+	if($user_count) //if user already exist change greeting text to "Welcome Back"
+    {
+        echo 'Welcome back '.$user->name.'! [<a href="'.$redirect_uri.'?logout=1">Log Out</a>]';
+    }
+	else //else greeting text "Thanks for registering"
+	{ 
+        echo 'Hi '.$user->name.', Thanks for Registering! [<a href="'.$redirect_uri.'?logout=1">Log Out</a>]';
+		$statement = $mysqli->prepare("INSERT INTO google_users (google_id, google_name, google_email, google_link, google_picture_link) VALUES (?,?,?,?,?)");
+		$statement->bind_param('issss', $user->id,  $user->name, $user->email, $user->link, $user->picture);
+		$statement->execute();
+		echo $mysqli->error;
+    }
+	
+	//print user details
+	echo '<pre>';
+	print_r($user);
+	echo '</pre>';
+}
+echo '</div>';
 
-							</td>
-						</tr>
 
-					</table>
+?>
 
-				</form>
-
-			</div>
-
-			<!--content website-->
-			<div id="content">
-			<!--content dinamis-->
-			<?php
-
-			$namafile = "$page.php";
-
-			if (file_exists($namafile)){
-				include_once($namafile);
-			}
-			else{
-				include_once("main.php");
-			}
-
-			?>
-
-			</div>
-
-			<!--footer website-->
-			<div id="footer">
-				<p>Copyright&copy IYA toko 2017</p>
-			</div>
-
-		</div>
-
-	</body>
-
-</html>

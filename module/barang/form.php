@@ -2,6 +2,7 @@
 
 	$id_barang = isset($_GET['id_barang']) ? $_GET['id_barang'] : false;
 	$id_kategori="";
+	$id_supplier="";
 	$nama_barang = "";
 	$gambar ="";
 	$keterangan_gambar ="";
@@ -17,6 +18,7 @@
 
 		$nama_barang = $row['nama_barang'];
 		$id_kategori = $row['id_kategori'];
+		$id_supplier = $row['id_supplier'];
 		$spesifikasi = $row['spesifikasi'];
 		$gambar = $row['gambar'];
 		$harga = $row['harga'];
@@ -61,6 +63,26 @@
 		<span><input type="text" name="nama_barang" value="<?php echo $nama_barang; ?>" /></span>
 	</div>
 
+	<div class="element-form">
+		<label>Suppier</label>
+		<span>
+				<select name="id_supplier">
+
+					<?php
+						$query = mysqli_query($koneksi,"SELECT id_supplier, nama_supplier FROM tb_supplier WHERE status='on' ORDER BY nama_supplier ASC");
+						while ($row=mysqli_fetch_assoc($query)) {
+							if (id_supplier == $row['id_supplier']) {
+								echo "<option value='$row[id_supplier]' selected='true'>$row[nama_supplier]</option>";
+							}
+							else {
+								echo "<option value='$row[id_supplier]'>$row[nama_supplier]</option>";
+							}
+						}
+					 ?>
+
+				</select>
+	</span>
+</div>
 	<div style="margin-bottom:10px;">
 		<label style="font-weight:bold;">Spesifikasi</label>
 		<span><textarea name="spesifikasi" id="editor"><?php echo $spesifikasi; ?></textarea></span>

@@ -4,7 +4,7 @@
 
 <?php
 
-	$query = mysqli_query($koneksi, "SELECT tb_barang.*, tb_kategori.nama_kategori FROM tb_barang JOIN tb_kategori ON tb_barang.id_kategori=tb_kategori.id_kategori ORDER BY nama_barang ASC");
+	$query = mysqli_query($koneksi, "SELECT tb_barang.*, tb_kategori.nama_kategori, tb_supplier.* FROM tb_barang JOIN tb_kategori ON tb_barang.id_kategori=tb_kategori.id_kategori JOIN tb_supplier ON tb_supplier.id_supplier=tb_barang.id_supplier  ORDER BY nama_barang ASC");
 
 	if (mysqli_num_rows($query) == 0) {
 		echo "<h3>Saat ini belum ada barang di dalam tabel barang</h3>";
@@ -15,6 +15,7 @@
 		echo "<tr class='baris-title'>
 				<th class='kolom-nomor'>No</th>
 				<th class='kiri'>Barang</th>
+				<th class='kiri'>Supplier</th>
 				<th class='kiri'>Kategori</th>
 				<th class='kiri'>Harga</th>
 				<th class='tengah'>Status</th>
@@ -27,6 +28,7 @@
 			echo "<tr>
 					<td class='kolom-nomor'>$no</td>
 					<td class='kiri'>$row[nama_barang]</td>
+					<td class='kiri'>$row[nama_supplier]</td>
 					<td class='kiri'>$row[nama_kategori]</td>
 					<td class='kiri'>".rupiah($row["harga"])."</td>
 					<td class='tengah'>$row[status]</td>

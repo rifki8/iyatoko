@@ -24,6 +24,9 @@
         if ($level_user == "superadmin") {
             $adminButton = "<a class='tombol-action' href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=status&id_pesanan=$row[id_pesanan]'>Update Status</a>";
         }
+        else{
+          $adminButton = "<a class='tombol-action' href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=detail_pesanan&id_pesanan=$row[id_pesanan]'>Detail Pesanan</a>";
+        }
 
         $status = $row['status'];
         echo "<tr>
@@ -31,7 +34,6 @@
                 <td class='kiri'>$arrayStatusPesanan[$status]</td>
                 <td class='kiri'>$row[nama_user]</td>
                 <td class='kiri'>
-                  <a class='tombol-action' href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=detail_pesanan&id_pesanan=$row[id_pesanan]'>Detail Pesanan</a>
                   $adminButton
                 </td>
               </tr>";

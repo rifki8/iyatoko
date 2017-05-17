@@ -8,19 +8,16 @@
   $button = $_POST['button'];
 
   if($button == "Konfirmasi") {
-    $id_user = $_SESSION["id_user"];
-    $nomor_rekening = $_POST["nomor_rekening"];
-    $nama_account = $_POST["nama_account"];
-    $tanggal_transfer = $_POST["tanggal_transfer"];
+    $id_user = $_SESSION['id_user'];
+    $nomer_rekening = $_POST['nomer_rekening'];
+    $nama_akun = $_POST['nama_akun'];
+    $tanggal_transfer = $_POST['tanggal_transfer'];
 
-    $queryPembayaran = mysqli_query($koneksi, "INSERT INTO tb_konfirmasi_pembayaran(id_pesanan, nomor_rekening, nama_account, tanggal_transfer)
-                                                                        VALUES('$id_pesanan', '$nomor_rekening', '$nama_account', '$tanggal_transfer')");
-
-    if ($queryPembayaran) {
-      mysqli_query($koneksi, "UPDATE tb_pesanan SET status='1' WHERE id_pesanan='$id_pesanan'");
+    $queryPembayaran = mysqli_query($koneksi, "UPDATE tb_pesanan SET status='1', nomer_rekening='$nomer_rekening', nama_akun='$nama_akun', tanggal_transfer='$tanggal_transfer' WHERE id_pesanan='$id_pesanan'");
     }
 
-  }else if($button == "Edit Status"){
+
+    else if($button == "Edit Status"){
     $status = $_POST['status'];
 
     mysqli_query($koneksi, "UPDATE tb_pesanan SET status='$status' WHERE id_pesanan='$id_pesanan'");

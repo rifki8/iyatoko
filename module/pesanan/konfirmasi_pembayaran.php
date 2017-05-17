@@ -9,12 +9,12 @@
 
     <div class="element-form">
       <label>Nomor Rekening</label>
-      <span><input type="text" name="nomor_rekening" /></span>
+      <span><input type="text" name="nomer_rekening" /></span>
     </div>
 
     <div class="element-form">
       <label>Nama Account</label>
-      <span><input type="text" name="nama_account" /></span>
+      <span><input type="text" name="nama_akun" /></span>
     </div>
 
     <div class="element-form">

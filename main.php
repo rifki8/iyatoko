@@ -1,41 +1,41 @@
 <div id="kiri">
 	<?php
-	
+
 		echo kategori($id_kategori);
-		
+
 	?>
 </div>
 
 <div id="kanan">
-	
+
 		 <div id="slides">
-		 
+
 			<?php
-			
-				$queryBanner = mysqli_query($koneksi, "SELECT * FROM tb_slider WHERE status='on' ORDER BY id_slider DESC LIMIT 3");
+
+				$queryBanner = mysqli_query($koneksi, "SELECT * FROM tb_slider WHERE status='on' ORDER BY id_slider DESC LIMIT 5");
 				while($rowBanner=mysqli_fetch_assoc($queryBanner)){
 					echo "<a href='".BASE_URL."$rowBanner[link]'><img src='".BASE_URL."images/slide/$rowBanner[gambar]' /></a>";
 				}
 			?>
-		 
+
 		 </div>
-	
+
 	<div id="frame-barang">
-	
+
 		<ul>
 			<?php
 
 				if($id_kategori){
-					$query = mysqli_query($koneksi, "SELECT * FROM tb_barang WHERE status='on' AND id_kategori='$id_kategori' ORDER BY rand() DESC LIMIT 9");
+					$query = mysqli_query($koneksi, "SELECT * FROM tb_barang WHERE status='on' AND id_kategori='$id_kategori' ORDER BY id_barang DESC LIMIT 16");
 				}else{
-					$query = mysqli_query($koneksi, "SELECT * FROM tb_barang WHERE status='on' ORDER BY rand() DESC LIMIT 9");
+					$query = mysqli_query($koneksi, "SELECT * FROM tb_barang WHERE status='on' ORDER BY id_barang DESC LIMIT 16");
 				}
-				
+
 				$no=1;
 				while($row=mysqli_fetch_assoc($query)){
 
 					$style=false;
-					if($no == 3){
+					if($no == 4){
 						$style="style='margin-right:0px'";
 						$no=0;
 					}

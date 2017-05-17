@@ -1,71 +1,72 @@
-    #slides {
-      display: none;
-	    background:#4A7CE2;
-	    padding:10px;
-	    padding-right:25px;
-	    margin-bottom:10px;
-      box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
-    }
+#slides {
+  display: none;
+  background: white;
+  padding:10px;
+  padding-right:25px;
+  margin-bottom:10px;
+  border: 1px #AFAFAF solid;
+  box-shadow: 0 16px 40px 0 rgba(0,0,0,0.30);
+}
 
-    #slides .slidesjs-navigation {
-      margin-top:3px;
-    }
+#slides .slidesjs-navigation {
+  margin-top:3px;
+}
 
-    #slides .slidesjs-previous {
-      margin-right: 5px;
-      float: left;
-    }
+#slides .slidesjs-previous {
+  margin-right: 5px;
+  float: left;
+}
 
-    #slides .slidesjs-next {
-      margin-right: 5px;
-      float: left;
-    }
+#slides .slidesjs-next {
+  margin-right: 5px;
+  float: left;
+}
 
-    .slidesjs-pagination {
-      margin: 6px 0 0;
-      float: right;
-      list-style: none;
-    }
+.slidesjs-pagination {
+  margin: 6px 0 0;
+  float: right;
+  list-style: none;
+}
 
-    .slidesjs-pagination li {
-      float: left;
-      margin: 0 1px;
-    }
+.slidesjs-pagination li {
+  float: left;
+  margin: 0 1px;
+}
 
-    .slidesjs-pagination li a {
-      display: block;
-      width: 13px;
-      height: 0;
-      padding-top: 13px;
-      background-image: url(../images/pagination.png);
-      background-position: 0 0;
-      float: left;
-      overflow: hidden;
-    }
+.slidesjs-pagination li a {
+  display: block;
+  width: 13px;
+  height: 0;
+  padding-top: 13px;
+  background-image: url(../images/pagination.png);
+  background-position: 0 0;
+  float: left;
+  overflow: hidden;
+}
 
-    .slidesjs-pagination li a.active,
-    .slidesjs-pagination li a:hover.active {
-      background-position: 0 -13px
-    }
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  background-position: 0 -13px
+}
 
-    .slidesjs-pagination li a:hover {
-      background-position: 0 -26px
-    }
+.slidesjs-pagination li a:hover {
+  background-position: 0 -26px
+}
 
-    #slides a:link,
-    #slides a:visited {
-      color: #333
-    }
+#slides a:link,
+#slides a:visited {
+  color: #333
+}
 
-    #slides a:hover,
-    #slides a:active {
-      color: #9e2020
-    }
+#slides a:hover,
+#slides a:active {
+  color: #9e2020
+}
 
-    .navbar {
-      overflow: hidden
-    }
+.navbar {
+  overflow: hidden
+}
 
-	img {
-	width: inherit;
-	}
+img {
+width: inherit;
+}

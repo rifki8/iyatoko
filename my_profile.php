@@ -19,6 +19,12 @@
 					if($level_user == "superadmin"){
 				?>
 					<li>
+						<a <?php if($module == "konfirmasi") { echo "class='active'"; } ?> href="<?php echo BASE_URL."index.php?page=my_profile&module=konfirmasi&action=list"; ?>">Konfrmasi Pambayaran</a>
+					</li>
+					<li>
+						<a <?php if($module == "supplier") { echo "class='active'"; } ?> href="<?php echo BASE_URL."index.php?page=my_profile&module=supplier&action=list"; ?>">Supplier</a>
+					</li>
+					<li>
 						<a <?php if($module == "kategori") { echo "class='active'"; } ?> href="<?php echo BASE_URL."index.php?page=my_profile&module=kategori&action=list"; ?>">Kategori</a>
 					</li>
 					<li>

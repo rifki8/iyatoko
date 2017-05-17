@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v8.4 
-MySQL - 5.6.26 : Database - iyatoko
+MySQL - 5.5.5-10.1.21-MariaDB : Database - iyatoko
 *********************************************************************
 */
 
@@ -64,6 +64,21 @@ CREATE TABLE `tb_kategori` (
 /*Data for the table `tb_kategori` */
 
 insert  into `tb_kategori`(`id_kategori`,`nama_kategori`,`status`) values (1,'Alat Musik','on'),(2,'Smartphone','on');
+
+/*Table structure for table `tb_konfirmasi_pembayaran` */
+
+DROP TABLE IF EXISTS `tb_konfirmasi_pembayaran`;
+
+CREATE TABLE `tb_konfirmasi_pembayaran` (
+  `id_konfirmasi` int(10) NOT NULL AUTO_INCREMENT,
+  `id_pemesanan` int(10) NOT NULL,
+  `nomor_rekening` varchar(20) NOT NULL,
+  `nama_account` varchar(150) NOT NULL,
+  `tanggal_transfer` date NOT NULL,
+  PRIMARY KEY (`id_konfirmasi`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_konfirmasi_pembayaran` */
 
 /*Table structure for table `tb_kota` */
 

@@ -1,8 +1,8 @@
 body{
 	font-family: arial;
 	font-size: 12px;
-	color: #4A7CE2;
-	background: #F8F8F8;
+	color: #001B81;
+	background: #EDEDED;
 	margin: 0px;
 	margin-top: 64px;
 }
@@ -17,7 +17,7 @@ body{
 /* header website */
 #container #header {
 	color: white;
-	background: #4A7CE2;
+	background: #001B81;
 	opacity: 0.9;
 	padding: 0px 0px;
 	overflow: hidden;
@@ -43,21 +43,25 @@ body{
 
 
 /* tombol cari */
-#tombol-cari img {
-    background: orange;
-    border: 2px white solid;
-    padding: 3px;
-    border-radius: 5px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+
+#tombol-cari {
+	height: 30px;
+	color: white;
+	font-weight: bold;
+	background: orange;
+	border: 2px white solid;
+	padding: 3px;
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
+
 
 /* kolom input pencarian */
 #container #header input[name="cari"] {
 	width: 500px;
-  height: 28px;
+  height: 30px;
   border: none;
-  margin-bottom: 3px;
   font-size: 14px;
   padding-left: 5px;
   border-radius: 5px;
@@ -103,7 +107,7 @@ body{
 /* tombol login / logout */
 #container #header #login {
     background: white;
-    color: #4A7CE2;
+    color: #001B81;
     padding: 3px 8px;
     font-size: 14px;
     border: 2px white solid;
@@ -126,7 +130,7 @@ body{
 #container #footer {
 		float:right;
 		width: 100%;
-		background: #4A7CE2;
+		background: #001B81;
     padding: 10px;
 		box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
@@ -147,9 +151,8 @@ body{
   border-radius: 5px;
   padding: 50px;
   background: #F8F8F8;
-	color: #4A7CE2;
-	border: 5px #4A7CE2 solid;
-	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
+	color: #001B81;
+	box-shadow: 0 16px 40px 0 rgba(0,0,0,0.30);
 }
 
 .element-form {
@@ -173,11 +176,12 @@ body{
 }
 
 .element-form span input[type="text"],
+.element-form span input[type="email"],
 .element-form span input[type="password"],
 .element-form span textarea,
 .element-form span select{
   border:none;
-  border-bottom: 2px #4A7CE2 solid;
+  border-bottom: 2px #001B81 solid;
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
@@ -247,22 +251,23 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 
 #menu-profile ul li {
 	margin-bottom: 5px;
-	background: #4A7CE2;
-	border: 2px #4A7CE2 solid;
+	background: white;
+	border: 2px white solid;
 	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
 #menu-profile ul li a {
   display: block;
-  color: white;
+  color: #001B81;
+	font-weight: bold;
   text-decoration: none;
   padding: 10px 20px;
 }
 
 #menu-profile ul li a:hover,
 #menu-profile ul li a.active {
-  background: #F8F8F8;
-  color: #4A7CE2;
+  background: #001B81;
+  color: white;
 }
 
 /* content profile*/
@@ -270,9 +275,10 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
   float: left;
   width: 82%;
   padding: 10px;
-  background: #F8F8F8;
+  background: white;
   margin-left: 10px;
-	color: #4A7CE2;
+	color: #001B81;
+	box-shadow: 0 16px 40px 0 rgba(0,0,0,0.30);
 }
 
 .table-list {
@@ -281,11 +287,11 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
 
 .table-list tr{
-	border-bottom: 1px #4A7CE2 solid;
+	border-bottom: 1px #001B81 solid;
 }
 
 .table-list tr.baris-title {
-  background: #4A7CE2;
+  background: #001B81;
 	color: white;
 }
 
@@ -336,11 +342,26 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 
 .element-form span input[name="nama_kategori"],
 .element-form span select[name="id_kategori"],
+.element-form span select[name="supplier"],
 .element-form span input[name="nama_barang"],
 .element-form span textarea[name="spesifikasi"],
 .element-form span input[name="stok"],
-.element-form span input[name="harga"]{
-  border: 2px #4A7CE2 solid;
+.element-form span input[name="harga"],
+.element-form span input[name="nama_kota"],
+.element-form span input[name="tarif"],
+.element-form span input[name="nama_slider"],
+.element-form span input[name="nama_penerima"],
+.element-form span input[name="nomor_telepon"],
+.element-form span textarea[name="alamat"],
+.element-form span select[name="nama_kota"],
+.element-form span input[name="nomer_rekening"],
+.element-form span input[name="nama_akun"],
+.element-form span input[name="tanggal_transfer"],
+.element-form span input[name="email_supplier"],
+.element-form span input[name="id_supplier"],
+.element-form span input[name="nama_supplier"],
+.element-form span input[name="link"]{
+  border: 1px #AFAFAF solid;
   margin: 10px auto;
 }
 
@@ -360,15 +381,17 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 #menu-kategori ul li a {
   display: block;
   padding: 10px;
-  background:#4A7CE2;
-  color: white;
+  background: white;
+  color: #001B81;
+	font-weight: bold;
   text-decoration: none;
-  border: 2px #4A7CE2 solid;
+  border: 2px white solid;
 	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
-#menu-kategori ul li a:hover {
-  background: white;
-	color: #4A7CE2;
+#menu-kategori ul li a:hover,
+#menu-kategori ul li a.active  {
+  background: #001B81;
+	color: white;
 }
 
 #kanan {
@@ -376,7 +399,7 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
   margin-left: 15px;
   height: auto;
   float: left;
-	color: #4A7CE2;
+	color: #001B81;
 }
 
 #kanan #frame-barang ul {
@@ -386,43 +409,45 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
   overflow: hidden;
 }
 #kanan #frame-barang ul li {
-  width: 240px;
-  background: #4A7CE2;
+  width: 237px;
+  background: white;
   padding: 10px 15px;
-  margin-bottom: 15px;
-  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-right: 10px;
   float: left;
-	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
+	border: 1px #AFAFAF solid;
+	box-shadow: 0 16px 40px 0 rgba(0,0,0,0.30);
 }
 #kanan #frame-barang ul li .price {
   font-size: 15px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
-	color: orange;
+	color: #001B81;
 }
 
 #kanan #frame-barang ul li a img {
   display: block;
-  width: 240px;
-	height: 240px;
+  width: 235px;
+	height: 235px;
 	margin-bottom: 10px;
+	border: 1px #AFAFAF solid;
 }
 #kanan #frame-barang ul li .keterangan-gambar {
-  border-top: 3px solid white;
-  border-bottom: 3px solid white;
+	border-top: 2px solid #001B81;
+  border-bottom: 2px solid #001B81;
   padding: 10px 0px;
   height: 50px;
 }
 #kanan #frame-barang ul li .keterangan-gambar p {
   text-align: center;
   margin: 5px 0px;
-	color: white;
+	color: #AFAFAF;
 }
 #kanan #frame-barang ul li .keterangan-gambar p a {
   font-weight: bold;
   text-decoration: none;
-	color: white;
+	color: black;
 }
 #kanan #frame-barang ul li .keterangan-gambar span {
   display: block;
@@ -437,8 +462,8 @@ box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
   text-decoration: none;
   padding: 5px 10px;
   display: inline-block;
+	border: 2px orange solid;
   margin-top: 10px;
-  border: 2px orange solid;
   border-radius: 3px;
 	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19);
 }
@@ -530,9 +555,9 @@ h2{
 #frame-button-keranjang a{
 	text-align: center;
 	width: 150px;
-	border : 2px #4A7CE2 solid;
+	border : 2px #001B81 solid;
 	border-radius: 5px;
-	background: #4A7CE2;
+	background: #001B81;
 	color: white;
 	text-decoration: none;
 	padding: 7px 20px;
@@ -543,7 +568,7 @@ h2{
 
 #frame-button-keranjang a:hover{
 	background: white;
-	color: #4A7CE2;
+	color: #001B81;
 }
 
 #lanjut-belanja{
@@ -558,7 +583,7 @@ h2{
 	float: left;
 	width: 500px;
 	margin-right: 20px;
-	margin-left: 10px;
+	margin-left: 150px;
 }
 
 #frame-data-detail {
@@ -567,16 +592,33 @@ h2{
 }
 
 #frame-detail-order {
-	border: 1px solid grey;
+	border: 1px solid #001B81;
 }
 
 #frame-form-pengiriman {
-	border: 1px solid grey;
+	border: 1px solid #001B81;
 	padding: 25px;
 }
 
 h3.label-data-pengiriman {
-	border: 1px solid grey;
+	border: 1px solid #001B81;
 	padding: 10px 7px;
 	margin: 0px;
+}
+/*tombol submit pesanan*/
+#pesan{
+	margin-left: 50px;
+}
+
+/*keterangan login/daftar*/
+#ket{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	color: #7F7F7F;
+}
+
+#ket a{
+	color: #001B81;
+	text-decoration: none;
+	font-weight: bold;
 }
